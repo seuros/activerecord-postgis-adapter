@@ -79,10 +79,10 @@ module ActiveRecord
             def type_cast_from_string(value)
               return value unless value.is_a?(String)
               begin
-                RGeo::WKRep::WKTParser.new(@factory, support_ewkt: true).parse(value)
+                RGeo::WKRep::WKTParser.new(factory, support_ewkt: true).parse(value)
               rescue RGeo::Error::ParseError
                 begin
-                  RGeo::WKRep::WKBParser.new(@factory, support_ewkb: true).parse(value)
+                  RGeo::WKRep::WKBParser.new(factory, support_ewkb: true).parse(value)
                 rescue
                   nil
                 end

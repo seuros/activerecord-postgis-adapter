@@ -6,7 +6,7 @@ module ActiveRecord # :nodoc:
             st_point:                { type: :st_point, has_z: false, has_m: false},
             st_point_z:              { type: :st_point, has_z: true, has_m: false },
             st_point_z_m:            { type: :st_point, has_z: true, has_m: true },
-            st_polygon:              { type: :st_point, has_z: false, has_m: false },
+            st_polygon:              { type: :st_polygon, has_z: false, has_m: false },
             st_polygon_z:            { type: :st_polygon, has_z: true, has_m: true },
             st_polygon_z_m:          { type: :st_polygon, has_z: true, has_m: false },
             st_geography:            { geographic: true },
