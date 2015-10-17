@@ -3,7 +3,3 @@ doc/
 pkg/
 tmp/
 Gemfile.lock
-/gemfiles/*.gemfile.lock
-/travis/*.lock
-/test/database.yml
-debug.log
