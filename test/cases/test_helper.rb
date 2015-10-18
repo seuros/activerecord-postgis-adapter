@@ -33,5 +33,6 @@ end
 
 
 ARTest.connect
+ARTest.create_db
 connection.enable_extension('postgis')
 ARTest.load_schema
