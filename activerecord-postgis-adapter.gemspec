@@ -14,9 +14,9 @@ Gem::Specification.new do |spec|
   spec.test_files = Dir['test/**/*']
   spec.platform = Gem::Platform::RUBY
 
-  spec.required_ruby_version = '>= 1.9.3'
+  spec.required_ruby_version = '>= 2.2.0'
 
-  spec.add_dependency 'pg', '~> 0.17'
+  spec.add_dependency 'pg', '~> 0.18'
   spec.add_dependency 'activerecord', '~> 4.2.0'
   spec.add_dependency 'rgeo-activerecord', '~> 1.0'
 

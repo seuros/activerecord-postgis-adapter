@@ -12,7 +12,7 @@ module ARTest
   def connect
     ActiveRecord::Base.logger = ActiveSupport::Logger.new('debug.log', 0, 100 * 1024 * 1024)
     ActiveRecord::Base.configurations = config
-    ActiveRecord::Base.establish_connection :default_env
+    ActiveRecord::Base.establish_connection :test
   end
 
   def load_schema
@@ -27,11 +27,6 @@ module ARTest
   end
 
   def read_config
-    unless config_file.exist?
-      example_config = File.expand_path('../../database.example.yml',__FILE__)
-      FileUtils.cp example_config, config_file
-    end
-
     YAML.load_file(config_file)
   end
 end
