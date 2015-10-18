@@ -4,9 +4,7 @@ rvm:
 
 gemfile:
   - Gemfile
-matrix:
-  allow_failures:
-    - rvm: rbx-2
+
 script: bundle exec rake test
 
 addons:
