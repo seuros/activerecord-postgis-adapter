@@ -1,6 +1,6 @@
 module ActiveRecord # :nodoc:
-  module ConnectionAdapters # :nodoc:
-    class PostGISColumn < PostgreSQLColumn # :nodoc:
+  module PostGIS # :nodoc:
+    class Column < ActiveRecord::ConnectionAdapters::PostgreSQLColumn # :nodoc:
 
       attr_reader :geographic, :srid, :spatial_type, :has_z, :has_m
       alias_method :geographic?, :geographic

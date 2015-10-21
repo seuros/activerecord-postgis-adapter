@@ -1,6 +1,6 @@
 module Arel  # :nodoc:
   module Visitors  # :nodoc:
-    class PostGIS < PostgreSQL # :nodoc:
+    module PostGIS # :nodoc:
 
       FUNC_MAP = {
           'st_wkttosql' => 'ST_GeomFromEWKT',
@@ -28,9 +28,8 @@ module Arel  # :nodoc:
             super
         end
       end
-
     end
-
-    VISITORS['postgis'] = PostGIS
   end
 end
+
+Arel::Visitors::PostgreSQL.include Arel::Visitors::PostGIS

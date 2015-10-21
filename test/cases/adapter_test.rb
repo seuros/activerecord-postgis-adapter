@@ -12,12 +12,7 @@ class AdapterTest < ActiveSupport::TestCase
     assert_includes ActiveRecord::SchemaDumper.ignore_tables, 'topology'
   end
 
-  def test_version
-    refute_nil ActiveRecord::ConnectionAdapters::PostGIS::VERSION
-  end
-
   def test_postgis_available
-    assert_equal 'PostGIS', connection.adapter_name
     refute_nil connection.postgis_lib_version
   end
 
