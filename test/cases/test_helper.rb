@@ -5,7 +5,7 @@ rescue LoadError
 end
 
 require 'active_support/testing/autorun'
-require_relative '../../lib/activerecord-postgis-adapter'
+require_relative '../../lib/activerecord-postgis'
 ActiveSupport.test_order = :random
 
 require_relative '../support/connection'
