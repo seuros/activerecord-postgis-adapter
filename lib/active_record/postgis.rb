@@ -8,6 +8,9 @@ require_relative 'postgis/common_adapter_methods'
 require_relative 'postgis/spatial_column_info'
 require_relative 'postgis/column'
 require_relative '../arel/visitors/postgis'
+require_relative 'postgis/oid/spatial'
+require_relative 'postgis/oid/st_geography'
+require_relative 'postgis/oid/st_geometry'
 
 module ActiveRecord
   module PostGIS # :nodoc:
@@ -65,10 +68,7 @@ module ActiveRecord
       PostGIS::TableDefinition.new(native_database_types, name, temporary, options, as)
     end
   end
-
-  module ConnectionAdapters
-    PostgreSQLAdapter.include PostGIS
-  end
 end
 
+ActiveRecord::ConnectionAdapters::PostgreSQLAdapter.prepend ActiveRecord::PostGIS
 ActiveRecord::SchemaDumper.ignore_tables += %w[geometry_columns spatial_ref_sys layer topology]

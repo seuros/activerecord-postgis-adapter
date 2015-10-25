@@ -169,7 +169,7 @@ module ActiveRecord # :nodoc:
       private
         def create_column_definition(name, type)
           if CommonAdapterMethods.spatial_column_constructor(type).nil?
-            PostgreSQL::ColumnDefinition.new(name, type)
+            ActiveRecord::ConnectionAdapters::PostgreSQL::ColumnDefinition.new(name, type)
           else
             PostGIS::ColumnDefinition.new(name, type)
           end

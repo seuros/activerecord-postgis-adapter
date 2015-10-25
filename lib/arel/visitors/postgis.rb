@@ -32,4 +32,4 @@ module Arel  # :nodoc:
   end
 end
 
-Arel::Visitors::PostgreSQL.include Arel::Visitors::PostGIS
+Arel::Visitors::PostgreSQL.prepend Arel::Visitors::PostGIS

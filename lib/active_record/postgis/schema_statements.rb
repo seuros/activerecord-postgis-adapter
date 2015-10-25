@@ -29,7 +29,7 @@ module ActiveRecord # :nodoc:
       end
 
       def new_spatial_column(table_name, column_name, default, cast_type, sql_type = nil, null = true, column_info)
-        PostGISColumn.new(@rgeo_factory_settings,table_name,column_name,default,cast_type,sql_type,null,column_info)
+        Column.new(@rgeo_factory_settings,table_name,column_name,default,cast_type,sql_type,null,column_info)
       end
 
       def type_to_sql(type, limit = nil, precision = nil, scale = nil)
