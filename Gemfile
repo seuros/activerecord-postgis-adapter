@@ -32,8 +32,8 @@ def activerecord_version
 end
 
 # Need to install for tests
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem "rails", github: "rails/rails", tag: "v#{activerecord_version}"
-
 group :development do
   # Gems used by the ActiveRecord test suite
   gem "bcrypt"

@@ -2,7 +2,8 @@
 
 require "bundler/setup"
 Bundler.require :development
-
+require 'dotenv'
+Dotenv.load
 require "minitest/autorun"
 require "minitest/pride"
 require "mocha/minitest"
