@@ -13,7 +13,7 @@ module ActiveRecord
           default_value = extract_value_from_default(default)
           default_function = extract_default_function(default_value, default)
 
-          if match = default_function&.match(/\Anextval\('"?(?<sequence_name>.+_(?<suffix>seq\d*))"?'::regclass\)\z/)
+          if (match = default_function&.match(/\Anextval\('"?(?<sequence_name>.+_(?<suffix>seq\d*))"?'::regclass\)\z/))
             serial = sequence_name_from_parts(table_name, column_name, match[:suffix]) == match[:sequence_name]
           end
 
